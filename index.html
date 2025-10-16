@@ -1,12 +1,55 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoDrive – Calculadora de Huella de Carbono</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Pronto pokeapi</h1>
-    <script src="script.js"></script>
+  <header>
+    <h1>🌿 EcoDrive</h1>
+    <p>Calcula la huella de carbono de tu vehículo y descubre cómo compensarla</p>
+  </header>
+
+  <main>
+    <section class="calculator">
+      <h2>Datos de tu conducción</h2>
+      <form id="ecoForm">
+        <label>Tipo de combustible:
+          <select id="fuel">
+            <option value="gasolina">Gasolina</option>
+            <option value="diesel">Diésel</option>
+            <option value="electrico">Eléctrico</option>
+          </select>
+        </label>
+
+        <label>Consumo promedio (km por litro):
+          <input type="number" id="efficiency" placeholder="Ej. 40" required />
+        </label>
+
+        <label>Distancia recorrida (km):
+          <input type="number" id="distance" placeholder="Ej. 150" required />
+        </label>
+
+        <button type="submit">Calcular</button>
+      </form>
+    </section>
+
+    <section id="result" class="hidden">
+      <h2>🌍 Tu impacto ambiental</h2>
+      <p id="emissionText"></p>
+      <canvas id="ecoChart" width="280" height="280"></canvas>
+      <div class="recommendations" id="recommendations"></div>
+      <button id="reset">Reiniciar</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>Desarrollado con ❤️ para un futuro más verde · EcoDrive 2025</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
